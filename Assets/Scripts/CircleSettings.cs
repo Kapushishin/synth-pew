@@ -18,7 +18,7 @@ public class CircleSettings : MonoBehaviour
     public GameObject explosionVFX;
     public GameObject explosionSFX;
 
-    public Transform spawnNewCircles;
+    //public Transform spawnNewCircles;
 
     void Start()
     {
@@ -33,7 +33,7 @@ public class CircleSettings : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (transform.position.y < -4)
+        if (transform.position.y < -6)
         {
             Destroy(gameObject);
         }

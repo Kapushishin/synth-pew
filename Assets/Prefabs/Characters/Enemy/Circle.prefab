@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 9003940106758857626}
   - component: {fileID: 5517473041654173686}
   - component: {fileID: 9142882206770572120}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Circle
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -251,4 +251,3 @@ MonoBehaviour:
   - {fileID: 21300000, guid: db1ab7f69c43d86419585f7b32ebeff7, type: 3}
   explosionVFX: {fileID: 3716275016998676315, guid: 6b37cd66c053f5c438d7a6854a9ee401, type: 3}
   explosionSFX: {fileID: 0}
-  spawnNewCircles: {fileID: 0}

@@ -51,7 +51,7 @@ public class HealthSystem : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Circles")
+        if (collision.gameObject.tag == "Enemy")
         {
             currentHealth -= damage;
             Shake();

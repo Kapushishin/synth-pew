@@ -23,7 +23,7 @@ public class PlayerSettings : MonoBehaviour
         rb.position = new Vector2
             (
                 Mathf.Clamp(rb.position.x, xMin, xMax),
-                -2.7f
+                -3.9f
             );
     }
 
