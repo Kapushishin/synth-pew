@@ -3300,3 +3300,4 @@ Received Import Request.
 Start importing Assets/Scripts/BulletSettings.cs using Guid(34d1693b54b545546872f46bbc0913ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a0f1b73d03c56cf61246f96550500c9') in 0.013121 seconds 
   Import took 0.017296 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
