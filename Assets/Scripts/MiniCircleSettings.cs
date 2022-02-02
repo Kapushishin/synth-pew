@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CircleSettings : MonoBehaviour
+public class MiniCircleSettings : MonoBehaviour
 {
     public Rigidbody2D rb;
 
@@ -16,17 +16,13 @@ public class CircleSettings : MonoBehaviour
     public Sprite[] sprites;
 
     public GameObject explosionVFX;
-    public GameObject explosionDivideVFX;
     public GameObject explosionSFX;
-    public GameObject miniCircle;
 
     void Start()
     {
         direction = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 0.0f));
         rb.AddForce(direction * speed, ForceMode2D.Impulse);
-        hp = Random.Range(0.5f, 1.5f);
         gameObject.transform.localScale = new Vector2(hp, hp);
-
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         RandomSprite();
     }
@@ -51,13 +47,6 @@ public class CircleSettings : MonoBehaviour
                 Instantiate(explosionVFX, transform.position, transform.rotation);
                 Destroy(gameObject);
                 ScoreSystem.scoreValue += 50;
-            }
-
-            if (hp > 1 && hp < 1.1)
-            {
-                Instantiate(explosionDivideVFX, gameObject.transform.position, Quaternion.identity);
-                Instantiate(miniCircle, gameObject.transform.position, Quaternion.identity);
-                Instantiate(miniCircle, gameObject.transform.position, Quaternion.identity);
             }
         }
 

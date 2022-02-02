@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4732976874217342645}
   - component: {fileID: 9003940106758857626}
   - component: {fileID: 5517473041654173686}
-  - component: {fileID: 9142882206770572120}
+  - component: {fileID: -4123386755777696130}
   m_Layer: 7
-  m_Name: Circle
+  m_Name: Mini Circle
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.8, y: 0.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
@@ -101,7 +101,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.25
 --- !u!50 &9003940106758857626
 Rigidbody2D:
   serializedVersion: 4
@@ -131,7 +131,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6166647551812941153}
   m_CullTransparentMesh: 1
---- !u!114 &9142882206770572120
+--- !u!114 &-4123386755777696130
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,12 +140,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6166647551812941153}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bc4f10a2b05252469bbf23894f00288, type: 3}
+  m_Script: {fileID: 11500000, guid: 80822af9ac121dc4fb202245444f6002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 9003940106758857626}
-  speed: 1
-  hp: 0
+  speed: 0.5
+  hp: 0.8
   damage: 0.1
   spriteRenderer: {fileID: 71835361987453986}
   sprites:
@@ -193,6 +193,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9f6c4994b975dc94a896969b0e0442f1, type: 3}
   - {fileID: 21300000, guid: 0b36ab251ec56e64b8e8029bffa51e2b, type: 3}
   - {fileID: 21300000, guid: 29005eb2421738c4c86d8b62bfc78e96, type: 3}
+  - {fileID: 21300000, guid: 29005eb2421738c4c86d8b62bfc78e96, type: 3}
   - {fileID: 21300000, guid: a8137782498799041bcd57cbe79ab73c, type: 3}
   - {fileID: 21300000, guid: 5e792125b1c9bda468dcc0f5548beddd, type: 3}
   - {fileID: 21300000, guid: 33862ea5bedc50744a997a50a24524f1, type: 3}
@@ -207,6 +208,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e8bf609c60489934cbe0a275f0b7d5b1, type: 3}
   - {fileID: 21300000, guid: b9101de4e34366545b501980be715849, type: 3}
   - {fileID: 21300000, guid: 519e7767f8ec7054c8ecce92e26dbb7b, type: 3}
+  - {fileID: 21300000, guid: e0ed9268d7cb63846a8e09c25c550ca1, type: 3}
   - {fileID: 21300000, guid: e0ed9268d7cb63846a8e09c25c550ca1, type: 3}
   - {fileID: 21300000, guid: b37077c2116a1e74aaec1413957cbb97, type: 3}
   - {fileID: 21300000, guid: 54af22c312e552b41ab4feebf21be626, type: 3}
@@ -250,6 +252,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4a314e94011775947bd5500004419a9f, type: 3}
   - {fileID: 21300000, guid: db1ab7f69c43d86419585f7b32ebeff7, type: 3}
   explosionVFX: {fileID: 3302442364004722511, guid: 10434d6bf3af98b46a88ab696f543ee3, type: 3}
-  explosionDivideVFX: {fileID: 3302442364004722511, guid: 10434d6bf3af98b46a88ab696f543ee3, type: 3}
   explosionSFX: {fileID: 0}
-  miniCircle: {fileID: 6166647551812941153, guid: 4985af88177e977479d0d8071cae39ab, type: 3}
