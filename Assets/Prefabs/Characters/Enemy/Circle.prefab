@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9003940106758857626}
   - component: {fileID: 5517473041654173686}
   - component: {fileID: 9142882206770572120}
+  - component: {fileID: 4203971986567547021}
   m_Layer: 7
   m_Name: Circle
   m_TagString: Enemy
@@ -145,8 +146,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 9003940106758857626}
   speed: 1
-  hp: 0
-  damage: 0.1
   spriteRenderer: {fileID: 71835361987453986}
   sprites:
   - {fileID: 21300000, guid: 6ba9476efc666b443a3c966aa085ce68, type: 3}
@@ -249,7 +248,18 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2d423af9041df3c4494d1dd61d2c68e6, type: 3}
   - {fileID: 21300000, guid: 4a314e94011775947bd5500004419a9f, type: 3}
   - {fileID: 21300000, guid: db1ab7f69c43d86419585f7b32ebeff7, type: 3}
+--- !u!114 &4203971986567547021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6166647551812941153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9c7fe33e973aa47b9a2cb44aaf024a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0.1
   explosionVFX: {fileID: 3302442364004722511, guid: 10434d6bf3af98b46a88ab696f543ee3, type: 3}
-  explosionDivideVFX: {fileID: 3302442364004722511, guid: 10434d6bf3af98b46a88ab696f543ee3, type: 3}
-  explosionSFX: {fileID: 0}
   miniCircle: {fileID: 6166647551812941153, guid: 4985af88177e977479d0d8071cae39ab, type: 3}
