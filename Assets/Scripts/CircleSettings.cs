@@ -6,7 +6,7 @@ public class CircleSettings : MonoBehaviour
 {
     public Rigidbody2D rb;
 
-    private Vector2 direction;
+    private Vector2 _direction;
     public float speed;
 
     public float hp;
@@ -16,14 +16,13 @@ public class CircleSettings : MonoBehaviour
     public Sprite[] sprites;
 
     public GameObject explosionVFX;
-    public GameObject explosionDivideVFX;
     public GameObject explosionSFX;
     public GameObject miniCircle;
 
     void Start()
     {
-        direction = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 0.0f));
-        rb.AddForce(direction * speed, ForceMode2D.Impulse);
+        _direction = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 0.0f));
+        rb.AddForce(_direction * speed, ForceMode2D.Impulse);
         hp = Random.Range(0.5f, 1.5f);
         gameObject.transform.localScale = new Vector2(hp, hp);
 
@@ -41,7 +40,7 @@ public class CircleSettings : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Bullets")
+        if (collision.gameObject.CompareTag("Bullets"))
         {
             gameObject.transform.localScale = new Vector2(hp - damage, hp - damage);
             ScoreSystem.scoreValue += 5;
@@ -55,7 +54,7 @@ public class CircleSettings : MonoBehaviour
 
             if (hp > 1 && hp < 1.1)
             {
-                Instantiate(explosionDivideVFX, gameObject.transform.position, Quaternion.identity);
+                Instantiate(explosionVFX, gameObject.transform.position, Quaternion.identity);
                 Instantiate(miniCircle, gameObject.transform.position, Quaternion.identity);
                 Instantiate(miniCircle, gameObject.transform.position, Quaternion.identity);
             }
@@ -64,7 +63,7 @@ public class CircleSettings : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             Instantiate(explosionVFX, transform.position, transform.rotation);
             Destroy(gameObject);

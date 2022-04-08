@@ -37,7 +37,7 @@ public class MiniCircleSettings : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Bullets")
+        if (collision.gameObject.CompareTag("Bullets"))
         {
             gameObject.transform.localScale = new Vector2(hp - damage, hp - damage);
             ScoreSystem.scoreValue += 5;
@@ -53,7 +53,7 @@ public class MiniCircleSettings : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             Instantiate(explosionVFX, transform.position, transform.rotation);
             Destroy(gameObject);
