@@ -42,14 +42,12 @@ public class CircleSettings : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullets"))
         {
-            gameObject.transform.localScale = new Vector2(hp - damage, hp - damage);
+            ScaleTranform();
             ScoreSystem.scoreValue += 5;
             hp -= damage;
             if (hp < 0.5f)
             {
-                Instantiate(explosionVFX, transform.position, transform.rotation);
-                Destroy(gameObject);
-                ScoreSystem.scoreValue += 50;
+                EnemyDestroing();
             }
 
             if (hp > 1 && hp < 1.1)
@@ -59,7 +57,6 @@ public class CircleSettings : MonoBehaviour
                 Instantiate(miniCircle, gameObject.transform.position, Quaternion.identity);
             }
         }
-
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -69,6 +66,24 @@ public class CircleSettings : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void ScaleTranform()
+    {
+        gameObject.transform.localScale = new Vector2(hp - damage, hp - damage);
+    }
+
+    void EnemyDestroing()
+    {
+        Instantiate(explosionVFX, transform.position, transform.rotation);
+        Destroy(gameObject);
+        ScoreSystem.scoreValue += 50;
+    }
+
+    /*public static void Destr(GameObject circle)
+    {
+        Destroy(circle);
+        ScoreSystem.scoreValue += 50;
+    }*/
 
     void RandomSprite()
     {

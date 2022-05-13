@@ -6,7 +6,7 @@ public class MiniCircleSettings : MonoBehaviour
 {
     public Rigidbody2D rb;
 
-    private Vector2 direction;
+    private Vector2 _direction;
     public float speed;
 
     public float hp;
@@ -20,9 +20,10 @@ public class MiniCircleSettings : MonoBehaviour
 
     void Start()
     {
-        direction = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 0.0f));
-        rb.AddForce(direction * speed, ForceMode2D.Impulse);
+        _direction = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 0.0f));
+        rb.AddForce(_direction * speed, ForceMode2D.Impulse);
         gameObject.transform.localScale = new Vector2(hp, hp);
+        
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         RandomSprite();
     }
@@ -39,18 +40,16 @@ public class MiniCircleSettings : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullets"))
         {
-            gameObject.transform.localScale = new Vector2(hp - damage, hp - damage);
+            ScaleTranform();
             ScoreSystem.scoreValue += 5;
             hp -= damage;
             if (hp < 0.5f)
             {
-                Instantiate(explosionVFX, transform.position, transform.rotation);
-                Destroy(gameObject);
-                ScoreSystem.scoreValue += 50;
+                EnemyDestroing();
             }
         }
-
     }
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -58,6 +57,18 @@ public class MiniCircleSettings : MonoBehaviour
             Instantiate(explosionVFX, transform.position, transform.rotation);
             Destroy(gameObject);
         }
+    }
+    
+    void ScaleTranform()
+    {
+        gameObject.transform.localScale = new Vector2(hp - damage, hp - damage);
+    }
+
+    void EnemyDestroing()
+    {
+        Instantiate(explosionVFX, transform.position, transform.rotation);
+        Destroy(gameObject);
+        ScoreSystem.scoreValue += 50;
     }
 
     void RandomSprite()

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerSettings : MonoBehaviour
 {
-    public float speed, vector;
+    public float speed, vector, startPos;
     Rigidbody2D rb;
     bool leftBtn, rightBtn;
     public float xMin, xMax;
@@ -23,7 +23,7 @@ public class PlayerSettings : MonoBehaviour
         rb.position = new Vector2
             (
                 Mathf.Clamp(rb.position.x, xMin, xMax),
-                -3.9f
+                startPos
             );
     }
 

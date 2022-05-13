@@ -17,6 +17,7 @@ public class HealthSystem : MonoBehaviour
     public Animator camShake;
 
     public GameObject explosionPlayerVFX;
+    public GameObject deathMenu;
 
     void Update()
     {
@@ -61,6 +62,7 @@ public class HealthSystem : MonoBehaviour
                 healths[0].sprite = emptyHeart;
                 Instantiate(explosionPlayerVFX, transform.position, transform.rotation);
                 Destroy(gameObject);
+                deathMenu.SetActive(true);
             }
         }
     }
